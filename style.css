@@ -1,0 +1,893 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --red: #b51217;
+    --dark-red: #70090c;
+    --black: #080808;
+    --dark: #111111;
+    --gray: #1c1c1c;
+    --light-gray: #bdbdbd;
+    --white: #f4f1ea;
+    --gold: #c59b54;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(5, 5, 5, 0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 75px;
+
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+.menu-btn {
+    display: none;
+
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8% 80px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.25)
+        ),
+        linear-gradient(
+            0deg,
+            #080808 0%,
+            transparent 35%
+        ),
+        url("https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.subtitle {
+    color: var(--gold);
+
+    font-size: 14px;
+    letter-spacing: 6px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(70px, 12vw, 150px);
+
+    line-height: 0.82;
+
+    letter-spacing: 4px;
+
+    text-shadow: 5px 5px 0 rgba(0,0,0,0.4);
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero-text {
+    max-width: 600px;
+
+    color: #ddd;
+
+    margin: 35px 0;
+
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+
+    background: var(--red);
+
+    padding: 14px 35px;
+
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e0181e;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 110px 25px;
+}
+
+.dark {
+    max-width: none;
+
+    background:
+        linear-gradient(rgba(15,15,15,.94), rgba(15,15,15,.94)),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.dark > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--red);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 32px;
+}
+
+.section-title h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 55px;
+
+    letter-spacing: 2px;
+}
+
+.section-intro {
+    max-width: 750px;
+
+    margin-bottom: 50px;
+
+    color: #aaa;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+.about-text p {
+    color: #bbb;
+
+    margin-bottom: 20px;
+}
+
+.about-text strong {
+    color: white;
+}
+
+.info-cards {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.info-card {
+    padding: 30px;
+
+    background: #141414;
+
+    border-left: 3px solid var(--red);
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+
+    background: #1d1d1d;
+}
+
+.info-card span {
+    font-size: 35px;
+}
+
+.info-card h3 {
+    margin: 12px 0 5px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 25px;
+}
+
+.info-card p {
+    color: #999;
+}
+
+
+/* =========================
+   GAMEPLAY
+========================= */
+
+.gameplay-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gameplay-card {
+    padding: 35px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s;
+}
+
+.gameplay-card:hover {
+    border-color: var(--red);
+
+    transform: translateY(-7px);
+}
+
+.gameplay-card .icon {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.gameplay-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.gameplay-card p {
+    color: #999;
+}
+
+
+/* =========================
+   PERSONAGENS
+========================= */
+
+.characters {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.character {
+    position: relative;
+
+    min-height: 210px;
+
+    padding: 35px 35px 35px 100px;
+
+    background: #131313;
+
+    overflow: hidden;
+
+    border: 1px solid #222;
+
+    transition: 0.3s;
+}
+
+.character:hover {
+    border-color: var(--red);
+
+    transform: translateY(-5px);
+}
+
+.character-number {
+    position: absolute;
+
+    left: 25px;
+    top: 25px;
+
+    color: var(--red);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 45px;
+}
+
+.character h3 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 32px;
+}
+
+.character span {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.character p {
+    color: #999;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 120px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: var(--red);
+}
+
+.timeline-item {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 60px;
+
+    margin-bottom: 50px;
+}
+
+.timeline-year {
+    color: var(--red);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 35px;
+
+    text-align: right;
+}
+
+.timeline-content {
+    position: relative;
+
+    padding: 25px;
+
+    background: #151515;
+
+    border: 1px solid #222;
+}
+
+.timeline-content::before {
+    content: "";
+
+    position: absolute;
+
+    left: -69px;
+    top: 30px;
+
+    width: 14px;
+    height: 14px;
+
+    background: var(--red);
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 5px #080808;
+}
+
+.timeline-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 30px;
+}
+
+.timeline-content p {
+    color: #999;
+}
+
+
+/* =========================
+   CURIOSIDADES
+========================= */
+
+.facts {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.fact {
+    text-align: left;
+
+    padding: 25px;
+
+    color: white;
+
+    background: #161616;
+
+    border: 1px solid #252525;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.fact:hover {
+    background: var(--red);
+
+    transform: translateY(-5px);
+}
+
+.fact span {
+    display: block;
+
+    color: var(--gold);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 25px;
+}
+
+.fact strong {
+    display: block;
+
+    margin: 10px 0;
+
+    font-size: 18px;
+}
+
+.fact small {
+    color: #888;
+}
+
+.fact:hover small {
+    color: white;
+}
+
+.fact-display {
+    min-height: 90px;
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+
+    background: #090909;
+
+    border-left: 4px solid var(--gold);
+
+    color: #ccc;
+}
+
+
+/* =========================
+   HISTÓRIA REAL
+========================= */
+
+.real-history {
+    background: #e8e1d4;
+
+    color: #171717;
+
+    max-width: none;
+}
+
+.real-history .section-title,
+.real-history > .real-grid {
+    max-width: 1200px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.real-history .section-title span {
+    color: var(--red);
+}
+
+.real-grid {
+    display: grid;
+
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 70px;
+}
+
+.real-grid h3 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+.real-grid p {
+    margin-bottom: 20px;
+
+    color: #444;
+}
+
+.history-box {
+    padding: 35px;
+
+    background: #d8cdbc;
+
+    border-top: 5px solid var(--red);
+}
+
+.history-box h3 {
+    font-size: 60px;
+
+    color: var(--red);
+}
+
+.history-box h4 {
+    margin-bottom: 15px;
+}
+
+.history-box ul {
+    list-style: none;
+}
+
+.history-box li {
+    margin: 8px 0;
+}
+
+
+/* =========================
+   SPOILER
+========================= */
+
+.spoiler {
+    padding: 80px 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #450709,
+            #160304
+        );
+
+    text-align: center;
+}
+
+.spoiler > div {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.spoiler span {
+    font-size: 40px;
+}
+
+.spoiler h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 45px;
+
+    margin: 10px 0;
+}
+
+.spoiler p {
+    color: #ddd;
+}
+
+.spoiler button {
+    margin-top: 25px;
+
+    padding: 13px 25px;
+
+    color: white;
+
+    background: transparent;
+
+    border: 1px solid white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.spoiler button:hover {
+    background: white;
+
+    color: #50070a;
+}
+
+.hidden-spoiler {
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,0.3);
+}
+
+.hidden-spoiler.show {
+    display: block;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 25px;
+
+    text-align: center;
+
+    background: #050505;
+
+    color: #777;
+}
+
+.footer-logo {
+    color: white;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 50px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+.copyright {
+    margin-top: 15px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        flex-direction: column;
+
+        background: #080808;
+
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .about-grid,
+    .real-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gameplay-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .characters {
+        grid-template-columns: 1fr;
+    }
+
+    .facts {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .gameplay-grid,
+    .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        display: block;
+    }
+
+    .timeline-year {
+        text-align: left;
+
+        margin-bottom: 10px;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+
+    .character {
+        padding-left: 80px;
+    }
+}
